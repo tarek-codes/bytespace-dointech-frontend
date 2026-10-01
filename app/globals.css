@@ -1,0 +1,242 @@
+/* ========================================
+   ByteSpace Design System - Global Styles
+   ======================================== */
+
+/* ---------- Font Imports ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@700&display=swap');
+
+/* Satoshi 400/500/700 from the Fontshare CDN */
+@font-face {
+  font-family: 'Satoshi';
+  src: url('https://cdn.fontshare.com/wf/TTX2Z3BF3P6Y5BQT3IV2VNOK6FL22KUT/7QYRJOI3JIMYHGY6CH7SOIFRQLZOLNJ6/KFIAZD4RUMEZIYV6FQ3T3GP5PDBDB6JY.woff2') format('woff2'),
+       url('https://cdn.fontshare.com/wf/TTX2Z3BF3P6Y5BQT3IV2VNOK6FL22KUT/7QYRJOI3JIMYHGY6CH7SOIFRQLZOLNJ6/KFIAZD4RUMEZIYV6FQ3T3GP5PDBDB6JY.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('https://cdn.fontshare.com/wf/P2LQKHE6KA6ZP4AAGN72KDWMHH6ZH3TA/ZC32TK2P7FPS5GFTL46EU6KQJA24ZYDB/7AHDUZ4A7LFLVFUIFSARGIWCRQJHISQP.woff2') format('woff2'),
+       url('https://cdn.fontshare.com/wf/P2LQKHE6KA6ZP4AAGN72KDWMHH6ZH3TA/ZC32TK2P7FPS5GFTL46EU6KQJA24ZYDB/7AHDUZ4A7LFLVFUIFSARGIWCRQJHISQP.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('https://cdn.fontshare.com/wf/LAFFD4SDUCDVQEXFPDC7C53EQ4ZELWQI/PXCT3G6LO6ICM5I3NTYENYPWJAECAWDD/GHM6WVH6MILNYOOCXHXB5GTSGNTMGXZR.woff2') format('woff2'),
+       url('https://cdn.fontshare.com/wf/LAFFD4SDUCDVQEXFPDC7C53EQ4ZELWQI/PXCT3G6LO6ICM5I3NTYENYPWJAECAWDD/GHM6WVH6MILNYOOCXHXB5GTSGNTMGXZR.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------- CSS Custom Properties / Design Tokens ---------- */
+:root {
+  /* Neutral / Black */
+  --neutral-50: #f5f5f6;
+  --neutral-100: #e5e6e8;
+  --neutral-200: #ced0d3;
+  --neutral-300: #abaeb5;
+  --neutral-400: #82868e;
+  --neutral-500: #666973;
+  --neutral-600: #585a62;
+  --neutral-700: #4b4c53;
+  --neutral-800: #424348;
+  --neutral-900: #3a3b3f;
+  --neutral-950: #242528;
+
+  /* Primary / Electric Violet (actually blue in the palette) */
+  --primary-50: #e7f6ff;
+  --primary-100: #d3eeff;
+  --primary-200: #b0ddff;
+  --primary-300: #81c5ff;
+  --primary-400: #4f9dff;
+  --primary-500: #2872ff;
+  --primary-600: #0445ff;
+  --primary-700: #0043ff;
+  --primary-800: #003be2;
+  --primary-900: #0b36a4;
+  --primary-950: #071e5f;
+
+  /* Secondary / "Crimson" (lime/green in practice) */
+  --secondary-50: #fdffe4;
+  --secondary-100: #faffc5;
+  --secondary-200: #f2ff92;
+  --secondary-300: #e4ff54;
+  --secondary-400: #d4fb20;
+  --secondary-500: #cbfc01;
+  --secondary-600: #8cb400;
+  --secondary-700: #6a8902;
+  --secondary-800: #546b09;
+  --secondary-900: #465a0d;
+  --secondary-950: #243300;
+
+  /* Typography */
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Satoshi', sans-serif;
+
+  /* Grid */
+  --grid-columns: 12;
+  --grid-margin: 120px;
+  --grid-gutter: 40px;
+
+  /* Shadows */
+  --shadow-card: 0 2px 16px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 8px 30px rgba(0, 0, 0, 0.10);
+  --shadow-float: 0 12px 40px rgba(0, 0, 0, 0.12);
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 160%;
+  color: var(--neutral-950);
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+input {
+  font-family: var(--font-body);
+  border: none;
+  outline: none;
+}
+
+/* ---------- Typography Classes ---------- */
+.heading-l {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 72px;
+  line-height: 120%;
+}
+
+.heading-m {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 120%;
+}
+
+.heading-s {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 120%;
+}
+
+.heading-xs {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+}
+
+.body-l {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 160%;
+}
+
+.body-m {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+}
+
+.body-s {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 160%;
+}
+
+.body-xs {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 160%;
+}
+
+.label-l {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 120%;
+}
+
+.label-m {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 120%;
+}
+
+.label-s {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 120%;
+}
+
+/* ---------- Container ---------- */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--grid-margin);
+}
+
