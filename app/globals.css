@@ -3597,3 +3597,117 @@ footer {
   }
 }
 
+/* Showcase sizing closer to the design */
+.signin-showcase { width: 500px; height: 470px; margin-top: 44px; }
+.signin-course { width: 282px; }
+.signin-course .course-card-image { height: 134px; }
+.signin-course .course-card-badge { font-size: 9px; padding: 4px 7px; }
+.signin-course .course-card-title { font-size: 16px; }
+.signin-course .course-card-rating { font-size: 14px; }
+.signin-course .course-card-author { font-size: 10px; }
+.signin-course .course-card-level { font-size: 10px; }
+.signin-course .course-card-price { font-size: 17px; }
+.signin-course-back { left: 0; top: 110px; }
+.signin-course-front { left: 112px; top: 0; }
+.signin-torus { width: 78px; left: 70px; top: 26px; }
+.signin-cone { width: 74px; left: 6px; bottom: 30px; }
+.signin-spiral { width: 80px; right: 26px; top: 168px; }
+.signin-students { width: 178px; right: 6px; bottom: 6px; }
+
+/* Sign in: exactly one screen tall, never scrolls (content is scaled to fit by SignInView) */
+.signin {
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+}
+
+.signin-inner {
+  flex-shrink: 0;
+  transform-origin: center center;
+}
+
+@media (max-width: 900px) {
+  .signin {
+    align-items: center;
+  }
+}
+
+@media (max-width: 1100px) {
+  .signin-showcase {
+    transform: none;
+    margin-bottom: 0;
+  }
+}
+
+/* Mirror the white spiral (individual `scale` property composes with the float animation's transform) */
+.signin-spiral {
+  scale: -1 1;
+}
+
+/* Wider Happy Students card, overlapping the bottom-right of the "Build Digital Asset" card */
+.signin-students {
+  width: 300px;
+  right: 0;
+  bottom: 34px;
+  padding: 14px 18px;
+}
+
+.signin-students-title {
+  font-size: 15px;
+}
+
+.signin-students-rating {
+  font-size: 10px;
+}
+
+.signin-students .hero-avatar-stack .avatar-img,
+.signin-students .hero-avatar-stack .avatar-badge {
+  width: 30px;
+  height: 30px;
+  font-size: 9px;
+}
+
+/* Sign up: footer link sits lower, like the design */
+.signin-new-signup {
+  margin-top: 72px;
+}
+
+/* Keep the showcase and the form card a constant distance apart on every desktop size:
+   fixed-width left column, pair centred as a group (columns no longer stretch). */
+@media (min-width: 901px) {
+  .signin-inner {
+    grid-template-columns: 500px minmax(380px, 520px);
+    justify-content: center;
+    column-gap: 110px;
+  }
+}
+
+/* Soft blue radial glows: top-right behind the man, bottom-right behind the woman */
+.professional-growth {
+  background-image:
+    radial-gradient(ellipse 38% 60% at 30% 14%, rgba(222, 250, 90, 0.8) 0%, rgba(222, 250, 90, 0) 100%),
+    radial-gradient(ellipse 42% 62% at 100% 8%, rgba(170, 190, 245, 0.55) 0%, rgba(170, 190, 245, 0) 100%);
+}
+
+.create-manage {
+  background-image:
+    radial-gradient(ellipse 30% 55% at 0% 88%, rgba(222, 250, 90, 0.65) 0%, rgba(222, 250, 90, 0) 100%),
+    radial-gradient(ellipse 42% 62% at 100% 86%, rgba(170, 190, 245, 0.6) 0%, rgba(170, 190, 245, 0) 100%);
+}
+
+@media (max-width: 768px) {
+  .professional-growth {
+    background-image:
+      radial-gradient(ellipse 90% 26% at 30% 3%, rgba(222, 250, 90, 0.75) 0%, rgba(222, 250, 90, 0) 100%),
+      radial-gradient(ellipse 80% 20% at 100% 42%, rgba(170, 190, 245, 0.55) 0%, rgba(170, 190, 245, 0) 100%);
+  }
+
+  .create-manage {
+    background-image:
+      radial-gradient(ellipse 80% 18% at 0% 90%, rgba(222, 250, 90, 0.6) 0%, rgba(222, 250, 90, 0) 100%),
+      radial-gradient(ellipse 80% 20% at 100% 92%, rgba(170, 190, 245, 0.6) 0%, rgba(170, 190, 245, 0) 100%);
+  }
+}
