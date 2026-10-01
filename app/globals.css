@@ -3181,3 +3181,419 @@ footer {
   }
 }
 
+/* ========================================
+   SIGN IN PAGE
+   ======================================== */
+.signin {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: #003BE2;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.signin-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-size: 120px 120px;
+  background-position: calc(50% - 1px) -1px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.12) 2px, transparent 2px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.12) 2px, transparent 2px);
+}
+
+.signin-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 56px 60px;
+  display: grid;
+  grid-template-columns: 1fr minmax(380px, 520px);
+  gap: 80px;
+  align-items: center;
+}
+
+/* ---- Left ---- */
+.signin-left {
+  align-self: start;
+  color: #fff;
+}
+
+.signin-logo {
+  display: inline-block;
+  margin-bottom: 40px;
+}
+
+.signin-left-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.signin-left-text {
+  font-size: 15px;
+  line-height: 160%;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 420px;
+}
+
+.signin-showcase {
+  position: relative;
+  width: 460px;
+  height: 440px;
+  margin-top: 56px;
+}
+
+.signin-course {
+  position: absolute;
+  width: 250px;
+  padding: 12px;
+  border-radius: 18px;
+  cursor: default;
+  box-shadow: 0 18px 40px rgba(0, 20, 90, 0.25);
+}
+
+.signin-course:hover {
+  transform: none;
+  box-shadow: 0 18px 40px rgba(0, 20, 90, 0.25);
+}
+
+.signin-course .course-card-image {
+  height: 112px;
+  border-radius: 12px;
+}
+
+.signin-course .course-card-badges {
+  left: 6px;
+  right: 6px;
+  bottom: 6px;
+  gap: 4px;
+}
+
+.signin-course .course-card-badge {
+  font-size: 8px;
+  padding: 3px 6px;
+  white-space: nowrap;
+}
+
+.signin-course .course-card-body {
+  padding: 12px 2px 2px;
+}
+
+.signin-course .course-card-title {
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.signin-course .course-card-rating {
+  font-size: 12px;
+  gap: 3px;
+}
+
+.signin-course .course-card-rating .star {
+  font-size: 12px;
+  color: #f5c518;
+}
+
+.signin-course .course-card-author {
+  font-size: 9px;
+  margin-bottom: 8px;
+}
+
+.signin-course .course-card-level {
+  font-size: 9px;
+  padding: 5px 9px;
+  gap: 5px;
+}
+
+.signin-course .course-card-enrolled-avatar {
+  width: 18px;
+  height: 18px;
+  border-width: 1.5px;
+}
+
+.signin-course .course-card-enrolled-count {
+  width: 18px;
+  height: 18px;
+  font-size: 7px;
+}
+
+.signin-course .course-card-meta {
+  margin-bottom: 8px;
+}
+
+.signin-course .course-card-price {
+  font-size: 15px;
+}
+
+.signin-course-back {
+  left: 0;
+  top: 100px;
+  z-index: 1;
+}
+
+.signin-course-front {
+  left: 100px;
+  top: 0;
+  z-index: 2;
+}
+
+.signin-shape {
+  position: absolute;
+  pointer-events: none;
+  z-index: 3;
+  height: auto;
+}
+
+.signin-torus {
+  width: 66px;
+  left: 62px;
+  top: 28px;
+}
+
+.signin-cone {
+  width: 62px;
+  left: 2px;
+  bottom: 22px;
+}
+
+.signin-spiral {
+  width: 70px;
+  right: 22px;
+  top: 150px;
+}
+
+.signin-students {
+  position: absolute;
+  z-index: 4;
+  right: 0;
+  bottom: 0;
+  width: 190px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: #D4FB20;
+  color: var(--neutral-950);
+  box-shadow: 0 14px 30px rgba(0, 20, 90, 0.25);
+}
+
+.signin-students-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.signin-students-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 9px;
+  color: #3a3b3f;
+  margin: 2px 0 8px;
+}
+
+.signin-students-rating svg {
+  color: var(--primary-600);
+}
+
+.signin-students .hero-avatar-stack .avatar-img,
+.signin-students .hero-avatar-stack .avatar-badge {
+  width: 26px;
+  height: 26px;
+  font-size: 8px;
+}
+
+.signin-students .hero-avatar-stack .avatar-badge {
+  background: #fff;
+}
+
+/* ---- Right card ---- */
+.signin-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 48px 44px 40px;
+  box-shadow: 0 30px 60px rgba(0, 20, 90, 0.25);
+}
+
+.signin-logo-mobile {
+  display: none;
+}
+
+.signin-eyebrow {
+  display: block;
+  font-size: 14px;
+  color: var(--primary-600);
+  margin-bottom: 4px;
+}
+
+.signin-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 120%;
+  color: var(--neutral-950);
+  margin-bottom: 28px;
+}
+
+.signin-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.signin-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--neutral-950);
+  margin-bottom: 8px;
+}
+
+.signin-input {
+  width: 100%;
+  height: 50px;
+  padding: 0 18px;
+  margin-bottom: 20px;
+  border: 1px solid var(--neutral-200);
+  border-radius: 14px;
+  background: #fff;
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--neutral-950);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.signin-input::placeholder {
+  color: var(--neutral-400);
+}
+
+.signin-input:focus {
+  border-color: var(--primary-600);
+  box-shadow: 0 0 0 3px rgba(0, 59, 226, 0.15);
+}
+
+.signin-submit {
+  align-self: flex-end;
+  margin-top: 4px;
+  padding: 14px 36px;
+  border-radius: 9999px;
+  background: #D4FB20;
+  color: var(--neutral-950);
+  font-weight: 700;
+  font-size: 15px;
+  transition: transform var(--transition-fast), background var(--transition-fast);
+}
+
+.signin-submit:hover {
+  background: #c6ec1c;
+  transform: translateY(-1px);
+}
+
+.signin-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 36px 0 28px;
+  color: var(--neutral-400);
+  font-size: 13px;
+}
+
+.signin-divider::before,
+.signin-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--neutral-200);
+}
+
+.signin-social {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.signin-social-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  border: 1px solid var(--neutral-200);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+
+.signin-social-btn:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.signin-new {
+  margin-top: 32px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--neutral-500);
+}
+
+.signin-new a {
+  color: var(--primary-600);
+}
+
+.signin-new a:hover {
+  text-decoration: underline;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1100px) {
+  .signin-inner {
+    padding: 48px 32px;
+    gap: 40px;
+    grid-template-columns: 1fr minmax(360px, 480px);
+  }
+
+  .signin-showcase {
+    transform: scale(0.85);
+    transform-origin: top left;
+    margin-bottom: -60px;
+  }
+}
+
+@media (max-width: 900px) {
+  .signin {
+    align-items: flex-start;
+  }
+
+  .signin-inner {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+    padding: 28px 20px 40px;
+  }
+
+  .signin-left {
+    display: none;
+  }
+
+  .signin-logo-mobile {
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+
+  .signin-card {
+    padding: 32px 24px 28px;
+    border-radius: 20px;
+  }
+
+  .signin-title {
+    font-size: 32px;
+    margin-bottom: 22px;
+  }
+
+  .signin-submit {
+    align-self: stretch;
+  }
+}
+
