@@ -240,3 +240,513 @@ input {
   padding: 0 var(--grid-margin);
 }
 
+/* ========================================
+/* ========================================
+   NAVBAR
+   ======================================== */
+.navbar-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.navbar-brand-icon {
+  width: 29px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.navbar-brand-name {
+  color: #F5F5F6;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: -0.01em;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.navbar-link {
+  color: #F5F5F6;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: none;
+  transition: opacity var(--transition-fast);
+  position: relative;
+  white-space: nowrap;
+}
+
+.navbar-link:hover {
+  opacity: 0.8;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.navbar-cart-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  color: #F5F5F6;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+
+.navbar-cart-btn:hover {
+  transform: scale(1.1);
+  opacity: 0.85;
+}
+
+/* ========================================
+   HERO SECTION (Pixel-Perfect from Figma SVG)
+   ======================================== */
+.hero {
+  position: relative;
+  background-color: #003BE2;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 600px;
+  max-height: 1080px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Edge-to-Edge 120px Grid Overlay spanning 100% of any viewport */
+.hero-grid-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  background-size: 120px 120px;
+  background-position: calc(50% - 1px) -1px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.12) 2px, transparent 2px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.12) 2px, transparent 2px);
+}
+
+/* Hero Header Text Content */
+.hero-header-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding-top: clamp(120px, 16vh, 170px);
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  pointer-events: auto;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(38px, 4.3vw, 64px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0 auto;
+  max-width: 860px;
+}
+
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: clamp(13px, 1.05vw, 15.5px);
+  line-height: 1.5;
+  color: #E5E6E8;
+  max-width: 760px;
+  margin: clamp(12px, 1.6vh, 18px) auto 0 auto;
+}
+
+/* Search Bar (Exact 461px input + 104px button side-by-side) */
+.hero-search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: clamp(45px, 6.5vh, 75px) auto 0 auto;
+  max-width: 585px;
+}
+
+.hero-search-input-pill {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: clamp(320px, 32vw, 461px);
+  height: clamp(44px, 5.2vh, 52px);
+  background: #ffffff;
+  border-radius: 9999px;
+  padding: 0 clamp(16px, 1.6vw, 24px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.hero-search-icon {
+  font-size: 19px;
+  color: #82868E;
+  flex-shrink: 0;
+}
+
+.hero-search-input-pill input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--font-body);
+  font-size: clamp(13.5px, 1vw, 15px);
+  color: #242528;
+}
+
+.hero-search-input-pill input::placeholder {
+  color: #82868E;
+}
+
+.hero-search-btn {
+  width: clamp(90px, 8vw, 108px);
+  height: clamp(44px, 5.2vh, 52px);
+  background: #D4FB20;
+  color: #242528;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(13.5px, 1vw, 15px);
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(212, 251, 32, 0.25);
+  transition: transform var(--transition-fast), background var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.hero-search-btn:hover {
+  background: #CBFC01;
+  transform: translateY(-2px);
+}
+
+/* 3D Decorative Floating Shapes - Fluid Responsive System */
+.hero-decorations {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 4;
+  overflow: hidden;
+}
+
+.hero-deco {
+  position: absolute;
+  pointer-events: none;
+  transition: transform var(--transition-normal);
+}
+
+.hero-deco img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.1));
+}
+
+/* 1. Top-Left Lime 3D Spiral - Placed at the left edge with negative offset so a portion is cut off from view */
+.deco-zigzag-lime {
+  left: clamp(-100px, -6vw, -50px);
+  top: clamp(90px, 14vh, 160px);
+  width: clamp(230px, 22vw, 330px);
+}
+
+/* 2. Mid-Left White 3D Spiral - Shifted right towards the center grid */
+.deco-zigzag-white-mid {
+  left: clamp(160px, 16vw, 240px);
+  top: clamp(330px, 44vh, 460px);
+  width: clamp(95px, 9.5vw, 150px);
+}
+
+/* 3. Bottom-Left White 3D Torus - Shifted higher up, larger, nestled right against/overlapping the green half circle */
+.deco-torus-white {
+  left: clamp(190px, 19vw, 320px);
+  bottom: clamp(65px, 9vh, 125px);
+  top: auto;
+  width: clamp(120px, 12vw, 195px);
+  z-index: 5;
+}
+
+/* 4. Top-Right Lime 3D Cylinder - Placed at the right edge with negative offset so a portion is cut off from view */
+.deco-blob-lime {
+  right: clamp(-95px, -5.5vw, -45px);
+  top: clamp(90px, 14vh, 160px);
+  width: clamp(200px, 19vw, 290px);
+}
+
+/* 5. Mid-Right White 3D Prism - Shifted left inwards closer to the center */
+.deco-prism-white {
+  right: clamp(150px, 15vw, 230px);
+  top: clamp(320px, 43vh, 450px);
+  width: clamp(95px, 10vw, 155px);
+}
+
+/* 6. Bottom-Right White 3D Spiral - Shifted higher up, larger, tucked close to the green half circle curve */
+.deco-zigzag-white-bottom {
+  right: clamp(180px, 18.5vw, 310px);
+  bottom: clamp(50px, 7.5vh, 105px);
+  top: auto;
+  width: clamp(120px, 12.5vw, 200px);
+  z-index: 5;
+}
+
+/* Hero Stage: Enlarged Student Cutout + 3 Floating Cards Grounded Flush at Bottom */
+.hero-stage {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1440px;
+  height: clamp(460px, 60vh, 620px);
+  pointer-events: none;
+  z-index: 6;
+}
+
+/* Giant Lime Arch SVG - Positioned behind decorations so white donut renders on top of it */
+.hero-lime-arch-wrap {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: clamp(920px, 86vw, 1380px);
+  height: clamp(320px, 46vh, 460px);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hero-lime-arch-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Student Image Grounded Exactly at Bottom of Hero - Prominently enlarged & 100% visible before next section */
+.hero-student-wrapper {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: clamp(440px, 42vw, 590px);
+  max-height: clamp(380px, 56vh, 545px);
+  height: auto;
+  max-width: 92vw;
+  aspect-ratio: 578 / 541;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.hero-student-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+  display: block;
+  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.12)) drop-shadow(0 32px 64px rgba(0, 0, 0, 0.18));
+}
+
+/* Floating Cards Common */
+.hero-float-card {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: clamp(12px, 1.1vw, 16px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+  pointer-events: auto;
+  z-index: 10;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+/* Card 1: UI/UX Design */
+.hero-card-uiux {
+  left: calc(50% - clamp(230px, 23vw, 330px));
+  bottom: clamp(190px, 27vh, 290px);
+  top: auto;
+  width: clamp(160px, 13.5vw, 200px);
+  padding: clamp(9px, 0.85vw, 13px) clamp(13px, 1.05vw, 17px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-card-uiux-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(13px, 1.05vw, 15px);
+  color: #242528;
+  line-height: 1.2;
+}
+
+.hero-card-uiux-meta {
+  font-family: var(--font-body);
+  font-size: clamp(10px, 0.8vw, 11.5px);
+  color: #82868E;
+  margin-top: 4px;
+  white-space: nowrap;
+}
+
+/* Card 2: Learning Progress */
+.hero-card-progress {
+  left: calc(50% + clamp(100px, 10.5vw, 160px));
+  bottom: clamp(140px, 19vh, 230px);
+  top: auto;
+  width: clamp(170px, 14.5vw, 220px);
+  padding: clamp(11px, 1vw, 16px) clamp(13px, 1.1vw, 18px);
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-card-progress-label {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: clamp(11px, 0.9vw, 13px);
+  color: #535763;
+}
+
+.hero-card-progress-value {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(26px, 2.4vw, 36px);
+  color: #242528;
+  line-height: 1.1;
+  margin: clamp(3px, 0.35vw, 5px) 0 clamp(6px, 0.8vw, 12px) 0;
+}
+
+.hero-card-progress-track {
+  width: 100%;
+  height: clamp(5px, 0.5vw, 7px);
+  background: #F6F6F6;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.hero-card-progress-bar {
+  height: 100%;
+  background: #D4FB20;
+  border-radius: 4px;
+  transition: width 1s ease-out;
+}
+
+/* Card 3: Happy Students */
+.hero-card-students {
+  left: calc(50% - clamp(250px, 26vw, 360px));
+  bottom: clamp(18px, 3vh, 45px);
+  top: auto;
+  width: clamp(230px, 20vw, 280px);
+  padding: clamp(10px, 1vw, 14px) clamp(12px, 1.1vw, 16px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hero-card-students-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-card-students-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(13px, 1.05vw, 15px);
+  color: #242528;
+}
+
+.hero-card-students-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: clamp(10.5px, 0.86vw, 12.5px);
+  color: #535763;
+  white-space: nowrap;
+}
+
+.hero-card-students-rating .star-icon {
+  color: #FFB800;
+  font-size: 12px;
+}
+
+.hero-card-avatars-row {
+  margin-top: 8px;
+}
+
+.hero-avatar-stack {
+  display: flex;
+  align-items: center;
+}
+
+.hero-avatar-stack .avatar-img {
+  width: clamp(24px, 2.5vw, 36px);
+  height: clamp(24px, 2.5vw, 36px);
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  object-fit: cover;
+  margin-left: -8px;
+  flex-shrink: 0;
+}
+
+.hero-avatar-stack .avatar-img:first-child {
+  margin-left: 0;
+}
+
+.hero-avatar-stack .avatar-badge {
+  width: clamp(24px, 2.5vw, 36px);
+  height: clamp(24px, 2.5vw, 36px);
+  border-radius: 50%;
+  background: #D4FB20;
+  color: #242528;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(9px, 0.8vw, 11px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -8px;
+  border: 2px solid #ffffff;
+  flex-shrink: 0;
+}
+
