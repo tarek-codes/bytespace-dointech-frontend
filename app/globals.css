@@ -2876,3 +2876,308 @@ footer {
   }
 }
 
+/* ========================================
+   GROWTH VISUAL: course card behind the character
+   Layer order: course card (1) < squiggle (2) < character (3) < progress card (4)
+   Sized in % of the visual so the composition scales on every screen.
+   ======================================== */
+.professional-growth .pg-visual {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  margin: 0 auto;
+  padding-top: 9%;
+}
+
+.professional-growth .pg-visual-image {
+  position: relative;
+  z-index: 3;
+  display: block;
+  width: 92%;
+  max-width: none;
+  margin-left: auto;
+}
+
+.professional-growth .pg-course-card {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 58%;
+  padding: 3.2%;
+  border-radius: 22px;
+  box-shadow: 0 18px 40px rgba(16, 24, 64, 0.08);
+  pointer-events: none;
+}
+
+.professional-growth .pg-course-card:hover {
+  transform: none;
+}
+
+.pg-course-card .course-card-image {
+  height: auto;
+  aspect-ratio: 16 / 10;
+  border-radius: 16px;
+}
+
+.pg-course-card .course-card-body {
+  padding: 14px 2px 2px;
+}
+
+.pg-course-card .course-card-title {
+  font-size: clamp(14px, 3.4vw, 18px);
+  white-space: nowrap;
+}
+
+.pg-course-card .course-card-author {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.pg-course-card .course-card-meta {
+  margin-bottom: 10px;
+}
+
+.pg-course-card .course-card-badges {
+  flex-wrap: nowrap;
+}
+
+.pg-course-card .course-card-badge {
+  white-space: nowrap;
+  font-size: 11px;
+  padding: 5px 10px;
+}
+
+.professional-growth .pg-card-progress {
+  z-index: 4;
+  left: auto;
+  right: 0;
+  top: 44%;
+  bottom: auto;
+}
+
+.professional-growth .pg-deco-squiggle {
+  z-index: 2;
+  right: 6%;
+  top: auto;
+  bottom: calc(56% + 14px);
+  width: clamp(44px, 9vw, 72px);
+}
+
+@media (max-width: 480px) {
+  .professional-growth .pg-course-card {
+    width: 62%;
+    border-radius: 16px;
+  }
+
+  .pg-course-card .course-card-image {
+    border-radius: 11px;
+  }
+
+  .pg-course-card .course-card-badge {
+    font-size: 8px;
+    padding: 3px 6px;
+  }
+
+  .pg-course-card .course-card-badges {
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    gap: 4px;
+  }
+
+  .pg-course-card .course-card-body {
+    padding: 8px 0 0;
+  }
+
+  .pg-course-card .course-card-author {
+    font-size: 10px;
+    margin-bottom: 6px;
+  }
+
+  .pg-course-card .course-card-level {
+    font-size: 10px;
+    padding: 5px 9px;
+  }
+
+  .pg-course-card .course-card-price {
+    font-size: 16px;
+  }
+
+  .professional-growth .pg-card-progress {
+    padding: 8px 10px;
+  }
+
+  .professional-growth .pg-card-progress .hero-card-progress-value {
+    font-size: 22px !important;
+  }
+
+  .professional-growth .pg-card-progress .hero-card-progress-track {
+    width: 84px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .professional-growth .pg-course-card {
+    width: 56%;
+  }
+
+  .professional-growth .pg-card-progress .hero-card-progress-label {
+    font-size: 9.5px;
+  }
+
+  .professional-growth .pg-card-progress .hero-card-progress-track {
+    width: 70px !important;
+  }
+}
+
+/* ========================================
+   3D lime spirals beside the two characters
+   ======================================== */
+.pg-spiral,
+.cm-spiral {
+  position: absolute;
+  z-index: 2;
+  width: clamp(54px, 14%, 84px);
+  pointer-events: none;
+}
+
+.pg-spiral img,
+.cm-spiral img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 10px 18px rgba(16, 24, 64, 0.15));
+}
+
+/* Growth: upper-right of the man, above the Learning Progress card */
+.pg-spiral {
+  right: 3%;
+  top: 14%;
+}
+
+/* Create & Manage: beside the woman's neck, between her hair and the right edge */
+.cm-spiral {
+  right: 20%;
+  top: 33%;
+}
+
+@media (max-width: 768px) {
+  .cm-spiral {
+    right: 24%;
+    top: 24%;
+    width: clamp(46px, 12%, 64px);
+  }
+}
+
+@media (max-width: 380px) {
+  .cm-spiral {
+    top: 12%;
+    right: 22%;
+    width: 44px;
+  }
+}
+
+/* Growth spiral: mirrored, perched on the top-right corner of Learning Progress */
+.professional-growth .pg-spiral {
+  top: auto;
+  right: -9%;
+  bottom: calc(56% - 6px);
+}
+
+.pg-spiral img {
+  transform: scaleX(-1);
+}
+
+/* Keep the spiral inside the screen on phones (container gutter is only 16-20px) */
+@media (max-width: 768px) {
+  .professional-growth .pg-spiral {
+    right: -4%;
+  }
+}
+
+/* Logo wordmark: Clash Display Bold 24px */
+.navbar-brand-name,
+.footer-logo-name {
+  font-family: 'Clash Display', var(--font-heading);
+  font-weight: 700;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0;
+}
+
+@media (max-width: 400px) {
+  .navbar-brand-name {
+    font-size: 22px;
+  }
+}
+
+/* Nudge the wordmark down to sit on the logo's optical centre */
+.navbar-brand-name,
+.footer-logo-name {
+  position: relative;
+  top: 6px;
+}
+
+/* Hero subtitle: Satoshi Regular 18px / 160% (scoped face so the site's other body text is unchanged) */
+@font-face {
+  font-family: 'Satoshi Regular';
+  src: url('//cdn.fontshare.com/wf/TTX2Z3BF3P6Y5BQT3IV2VNOK6FL22KUT/7QYRJOI3JIMYHGY6CH7SOIFRQLZOLNJ6/KFIAZD4RUMEZIYV6FQ3T3GP5PDBDB6JY.woff2') format('woff2'),
+       url('//cdn.fontshare.com/wf/TTX2Z3BF3P6Y5BQT3IV2VNOK6FL22KUT/7QYRJOI3JIMYHGY6CH7SOIFRQLZOLNJ6/KFIAZD4RUMEZIYV6FQ3T3GP5PDBDB6JY.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.hero-subtitle {
+  font-family: 'Satoshi Regular', var(--font-body);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 160%;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .hero-subtitle {
+    font-size: clamp(14px, 4vw, 16px);
+  }
+}
+
+/* Section paragraphs: Satoshi Regular 18px / 160% */
+.discover-subtitle,
+.categories-subtitle,
+.pg-text p,
+.cm-text > p,
+.cta-creator p,
+.testimonials-desc,
+.testimonial-card blockquote {
+  font-family: 'Satoshi Regular', var(--font-body);
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 160%;
+  letter-spacing: 0;
+}
+
+@media (max-width: 768px) {
+  .discover-subtitle,
+  .categories-subtitle,
+  .pg-text p,
+  .cm-text > p,
+  .cta-creator p,
+  .testimonials-desc,
+  .testimonial-card blockquote {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .categories-subtitle {
+    max-width: 1100px;
+  }
+}
+
