@@ -2457,3 +2457,422 @@ input {
   }
 }
 
+/* ========================================
+   MOBILE POLISH (all phone sizes)
+   ======================================== */
+
+/* Clip decorative overflow per section so no device can scroll sideways
+   (iOS Safari ignores overflow-x on body alone). clip, unlike hidden,
+   does not create a scroll container. */
+main > section,
+footer {
+  overflow-x: clip;
+}
+
+.footer-newsletter input {
+  min-width: 0;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  /* Inline right:-30px pushed this past the screen edge */
+  .cm-deco-squiggle {
+    right: 0 !important;
+    width: 44px !important;
+  }
+
+  /* --- Growth section: keep the progress card off the face --- */
+  .pg-visual {
+    max-width: 440px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .pg-card-progress {
+    top: auto;
+    bottom: 10%;
+    left: 0;
+    right: auto;
+  }
+
+  .pg-deco-squiggle {
+    right: 4px;
+    top: 4%;
+    width: 48px;
+  }
+
+  /* --- Create & Manage: smaller cards pushed to the edges --- */
+  .cm-visual {
+    max-width: 440px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .cm-float-card {
+    padding: 10px 12px;
+  }
+
+  .cm-card-revenue {
+    left: 0;
+    top: 4%;
+  }
+
+  .cm-card-revenue-value {
+    font-size: 22px;
+  }
+
+  .cm-card-revenue-bar {
+    width: 84px;
+  }
+
+  .cm-card-ytd {
+    left: 0;
+    top: auto;
+    bottom: 6%;
+  }
+
+  .cm-card-ytd-value {
+    font-size: 19px;
+  }
+
+  .cm-card-students {
+    left: auto;
+    right: 0;
+    bottom: 26%;
+    transform: none;
+  }
+
+  /* --- Mobile-tuned glows: % ellipses turn into thin stripes in tall sections --- */
+  .professional-growth {
+    background-image:
+      radial-gradient(ellipse 90% 26% at 30% 3%, rgba(222, 250, 90, 0.75) 0%, rgba(222, 250, 90, 0) 100%);
+  }
+
+  .create-manage {
+    background-image:
+      radial-gradient(ellipse 70% 16% at 0% 22%, rgba(222, 250, 90, 0.6) 0%, rgba(222, 250, 90, 0) 100%),
+      radial-gradient(ellipse 70% 14% at 35% 34%, rgba(170, 190, 245, 0.5) 0%, rgba(170, 190, 245, 0) 100%);
+  }
+
+  .testimonials {
+    padding: 80px 0 90px;
+    background-image:
+      radial-gradient(ellipse 80% 12% at 55% 5%, rgba(222, 250, 90, 0.75) 0%, rgba(222, 250, 90, 0) 100%),
+      radial-gradient(ellipse 60% 12% at 100% 24%, rgba(215, 245, 90, 0.55) 0%, rgba(215, 245, 90, 0) 100%),
+      radial-gradient(ellipse 80% 12% at 0% 94%, rgba(170, 190, 245, 0.7) 0%, rgba(170, 190, 245, 0) 100%);
+  }
+
+  .testimonial-card {
+    padding: 28px 24px 32px;
+  }
+
+  /* --- Creator CTA: shapes only in the top and bottom bands, clear of text --- */
+  .cta-creator {
+    padding: 110px 0 130px;
+  }
+
+  .cta-shape-spiral-lime { width: 76px; left: -16px; top: -14px; }
+  .cta-shape-cone-white { display: none; }
+  .cta-shape-cone-lime { width: 46px; right: 26%; top: 18px; }
+  .cta-shape-cylinder-white { width: 62px; right: -14px; top: 12px; }
+  .cta-shape-torus-lime { width: 96px; left: 4%; bottom: -36px; }
+  .cta-shape-spiral-lime-bottom { width: 64px; right: 6%; bottom: -24px; }
+
+  .cta-creator h2 {
+    font-size: 28px;
+  }
+
+  /* --- Course cards --- */
+  .course-card-badges {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    gap: 6px;
+  }
+
+  .course-card-badge {
+    white-space: nowrap;
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+}
+
+/* Small phones (iPhone SE 1st gen, Galaxy Fold, 320–400px) */
+@media (max-width: 400px) {
+  .course-card {
+    padding: 14px;
+    border-radius: 22px;
+  }
+
+  .course-card-image {
+    height: 180px;
+    border-radius: 16px;
+  }
+
+  .course-card-badge {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+
+  .course-card-title {
+    font-size: 16px;
+  }
+
+  .course-card-rating {
+    font-size: 16px;
+  }
+
+  .course-card-meta {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .discover-tag {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .categories-grid {
+    gap: 12px;
+  }
+
+  .navbar-actions {
+    gap: 12px;
+  }
+
+  .navbar-link {
+    font-size: 13px;
+  }
+
+  .navbar-brand-name {
+    font-size: 18px;
+  }
+
+  .navbar-brand-icon {
+    width: 24px;
+    height: 27px;
+  }
+
+  .hero-card-uiux {
+    width: 126px;
+  }
+
+  .hero-card-uiux-meta {
+    white-space: normal;
+    line-height: 1.35;
+  }
+
+  .hero-card-progress {
+    width: 116px;
+  }
+
+  .pg-stats {
+    gap: 24px;
+  }
+
+  .pg-stat-value {
+    font-size: 30px;
+  }
+
+  .footer-legal {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 20px;
+  }
+}
+
+/* ========================================
+   FLOATING ELEMENT SPACING
+   Shapes are positioned *relative to the card beside them* (same clamp()
+   values the cards use) so they keep a fixed gap at every screen width,
+   instead of edge-anchored shapes drifting into center-anchored cards.
+   ======================================== */
+
+/* --- Desktop (>= 1025px) --- */
+@media (min-width: 1025px) {
+  /* Keep heading/subtitle clear of the big edge shapes */
+  .hero-title,
+  .hero-subtitle {
+    max-width: min(860px, calc(100vw - 2 * clamp(190px, 17vw, 250px)));
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Torus: right edge 20px left of the Happy Students card */
+  .deco-torus-white {
+    left: calc(50% - clamp(250px, 26vw, 360px) - 20px - clamp(120px, 12vw, 195px));
+  }
+
+  /* Bottom-right spiral: left edge 20px right of the Learning Progress card */
+  .deco-zigzag-white-bottom {
+    right: auto;
+    left: calc(50% + clamp(100px, 10.5vw, 160px) + clamp(170px, 14.5vw, 220px) + 20px);
+  }
+
+  /* Mid spirals/prism: clear of the big edge shapes */
+  .deco-zigzag-white-mid {
+    left: calc(clamp(-100px, -6vw, -50px) + clamp(230px, 22vw, 330px) + 20px);
+  }
+
+  .deco-prism-white {
+    right: calc(clamp(-95px, -5.5vw, -45px) + clamp(200px, 19vw, 290px) + 20px);
+  }
+
+  /* Growth: squiggle sits fully above the progress card */
+  .pg-deco-squiggle {
+    top: auto;
+    bottom: calc(60% + 16px);
+  }
+
+  /* Create & Manage: students card to the right so it never meets Year to Date */
+  .cm-card-students {
+    left: auto;
+    right: 0;
+    transform: none;
+  }
+}
+
+/* --- Tablet (769px – 1024px) --- */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-title,
+  .hero-subtitle {
+    max-width: calc(100vw - 2 * clamp(150px, 17vw, 210px));
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .deco-torus-white {
+    left: calc(50% - clamp(220px, 27vw, 310px) - 20px - clamp(100px, 12vw, 120px));
+  }
+
+  .deco-zigzag-white-bottom {
+    right: auto;
+    left: calc(50% + clamp(80px, 10vw, 140px) + clamp(160px, 17vw, 200px) + 20px);
+  }
+
+  .pg-deco-squiggle {
+    top: auto;
+    bottom: calc(60% + 16px);
+  }
+
+  .cm-card-students {
+    left: auto;
+    right: 0;
+    transform: none;
+  }
+}
+
+/* --- Phones & small tablets (<= 768px) ---
+   Edge shapes are anchored to the hero bottom, stacked in bands that sit
+   between the bottom "Happy Students" card and the two top cards. */
+@media (max-width: 768px) {
+  .deco-torus-white {
+    left: -12px;
+    bottom: 116px;
+    width: 64px;
+  }
+
+  .deco-zigzag-white-bottom {
+    left: auto;
+    right: -12px;
+    bottom: 116px;
+    width: 60px;
+  }
+
+  .deco-zigzag-white-mid {
+    top: auto;
+    left: 2px;
+    bottom: 204px;
+    width: 42px;
+  }
+
+  .deco-prism-white {
+    top: auto;
+    right: 2px;
+    bottom: 204px;
+    width: 42px;
+  }
+}
+
+/* --- Fine-tuning for tight viewports --- */
+@media (min-width: 1025px) {
+  /* Smaller bottom-right spiral so it stays below the mid prism */
+  .deco-zigzag-white-bottom {
+    width: clamp(110px, 11vw, 180px);
+  }
+
+  /* Mid spiral sized to the gap between the big lime spiral and the UI/UX card */
+  .deco-zigzag-white-mid {
+    width: clamp(90px, 7.5vw, 140px);
+  }
+}
+
+/* Narrow desktops or short laptop screens: not enough room between the
+   search bar and the cards for the two mid-height shapes, so drop them */
+@media (min-width: 1025px) and (max-width: 1199px),
+       (min-width: 1025px) and (max-height: 820px) {
+  .deco-zigzag-white-mid,
+  .deco-prism-white {
+    display: none;
+  }
+}
+
+/* Phablets / small tablets: title clear of the corner shapes */
+@media (min-width: 481px) and (max-width: 768px) {
+  .hero-title {
+    max-width: calc(100vw - 160px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .cm-deco-squiggle {
+    top: 0 !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .deco-zigzag-lime {
+    width: 66px;
+    left: -20px;
+  }
+
+  .cm-card-revenue {
+    top: 0;
+  }
+
+  .cm-card-ytd {
+    bottom: 0;
+  }
+
+  .cm-card-revenue-value {
+    font-size: 20px;
+  }
+
+  .cm-card-ytd-value {
+    font-size: 17px;
+  }
+}
+
+/* Phone hero side bands, sized so both bands fit between the bottom card
+   and the top cards with >=12px clearance:
+   bottom band: 120px .. ~180px, mid band: 196px .. ~236px */
+@media (max-width: 768px) {
+  .deco-torus-white {
+    width: 56px;
+    bottom: 120px;
+  }
+
+  .deco-zigzag-white-bottom {
+    width: 46px;
+    bottom: 120px;
+  }
+
+  .deco-zigzag-white-mid,
+  .deco-prism-white {
+    width: 36px;
+    bottom: 196px;
+  }
+}
+
